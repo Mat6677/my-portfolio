@@ -2,22 +2,20 @@
 import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { projects } from "../mocks/projects.json";
-
-const aboutText = ["A", "b", "o", "u", "t", "M", "e"];
 ---
 
 <Layout title="Home">
   <header
     class="flex justify-between px-10 py-5 max-[400px]:px-4 max-[400px]:py-3"
   >
-    <figure class="text-accent">Mateo</figure>
-    <nav>
+    <figure class="text-accent text-xl">Mateo</figure>
+    <!-- <nav>
       <ul class="flex gap-5">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact Me</a></li>
       </ul>
-    </nav>
+    </nav> -->
   </header>
   <main class="min-h-fit">
     <section
@@ -33,7 +31,7 @@ const aboutText = ["A", "b", "o", "u", "t", "M", "e"];
         </p>
         <button class="w-fit h-fit hover:-translate-y-[10px] transition-all"
           ><a
-            href="/contact"
+            href="#footer"
             class="border border-text bg-bg px-4 py-2 text-3xl max-md:text-2xl rounded transition-all hover:drop-shadow-accentSh hover:border-accent"
             >Contact</a
           ></button
@@ -155,6 +153,7 @@ const aboutText = ["A", "b", "o", "u", "t", "M", "e"];
     </section>
   </main>
   <footer
+    id="footer"
     class="min-h-[45svh] mt-32 bg-bg border-t border-text/50 flex justify-between px-20 flex-wrap gap-20 max-[899px]:justify-center p-10"
   >
     <section class="flex flex-col items-center [&>ul>*]:text-3xl">

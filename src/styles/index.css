@@ -118,7 +118,7 @@ body::-webkit-scrollbar-thumb {
 .about > section {
   opacity: 0;
 
-  transition: all 250ms 700ms ease-in-out;
+  transition: all 250ms 300ms ease-in-out;
 }
 .about.active > section {
   opacity: 1;
@@ -133,7 +133,7 @@ body::-webkit-scrollbar-thumb {
   transform-origin: right;
   transform: scaleX(1);
 
-  transition: transform 400ms 200ms ease-in-out;
+  transition: transform 200ms 50ms ease-in-out;
 }
 .about.active > .about-title::after {
   transform: scaleX(0);
