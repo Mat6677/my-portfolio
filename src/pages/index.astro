@@ -1,0 +1,337 @@
+---
+import Layout from "../components/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../mocks/projects.json";
+
+const aboutText = ["A", "b", "o", "u", "t", "M", "e"];
+---
+
+<Layout title="Home">
+  <header
+    class="flex justify-between px-10 py-5 max-[400px]:px-4 max-[400px]:py-3"
+  >
+    <figure class="text-accent">Mateo</figure>
+    <nav>
+      <ul class="flex gap-5">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="min-h-fit">
+    <section
+      class="min-h-[75svh] flex items-center justify-center gap-20 px-10 max-[660px]:gap-5 max-[660px]:flex-wrap"
+    >
+      <div class="flex flex-col gap-10 max-[660px]:order-2">
+        <h1 class="text-5xl overflow-hidden">
+          Hi, I'm Mateo a <br />
+          <span class="text-to-change text-primary relative">Developer</span>
+        </h1>
+        <p class="text-xl max-w-[30ch]">
+          Front end developer, studying to become full stack.
+        </p>
+        <button class="w-fit h-fit hover:-translate-y-[10px] transition-all"
+          ><a
+            href="/contact"
+            class="border border-text bg-bg px-4 py-2 text-3xl max-md:text-2xl rounded transition-all hover:drop-shadow-accentSh hover:border-accent"
+            >Contact</a
+          ></button
+        >
+      </div>
+      <figure class="py-10 max-[660px]:order-1">
+        <div
+          class="img-box w-[350px] h-[350px] max-[918px]:w-[300px] max-[918px]:h-[300px]"
+        >
+        </div>
+      </figure>
+    </section>
+    <section
+      class="flex justify-center my-32 mx-auto max-w-screen-lg px-10 max-md:flex-wrap min-h-[75svh]"
+    >
+      <div
+        class="bg-bg text-center border-l border-t border-b border-text/50 rounded-l h-fit px-10 py-5 text-2xl min-w-fit max-md:w-full max-md:border"
+      >
+        <h2 class="border-b-2 border-secondary w-fit mx-auto">Tech Stack</h2>
+      </div>
+      <div
+        class="bg-bg border border-text/50 rounded-r rounded-bl w-full p-10 h-fit"
+      >
+        <ul
+          class={`
+              flex flex-wrap gap-20 justify-center 
+              [&>li]:flex [&>li]:flex-col [&>li]:justify-center [&>li]:items-center
+              [&>li>span]:font-bold [&>li>span]:text-[15px] [&>li>span]:
+          `}
+        >
+          <li>
+            <i class="fa-brands fa-html5 text-[65px] text-orange-700"></i>
+            <span>HTML</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-css3 text-[65px] text-blue-400"></i>
+            <span>CSS</span>
+          </li>
+          <li>
+            <img src="/Tailwind_CSS_Logo.svg.png" class="w-[65px]" alt="" />
+            <span>TailWind</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-sass text-[65px] text-pink-400"></i>
+
+            <span>SASS</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-git-alt text-[65px] text-red-500"></i>
+
+            <span>Git</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-js text-[65px] text-yellow-300"></i>
+            <span>JavaScript</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-react text-[65px] text-blue-500"></i>
+            <span>React</span>
+          </li>
+          <li>
+            <img src="/astro_icon.svg" class="w-[65px]" alt="" />
+            <span>Astro</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section
+      class="min-h-screen max-w-screen-lg mx-auto flex flex-col items-center about my-20"
+    >
+      <h2 class="text-5xl mb-5 about-title">About Me</h2>
+      <section class="text-xl flex flex-col gap-7">
+        <p>
+          <i class="fa-solid fa-terminal text-primary"></i>
+           Welcome to my portfolio! I'm a passionate Front-End Developer with a
+          knack for crafting immersive and user-centric web experiences.
+        </p>
+        <p>
+          <i class="fa-solid fa-terminal text-primary"></i>
+           I'm committed to transforming creative concepts into dynamic,
+          responsive, and visually stunning websites.
+        </p>
+        <p>
+          <i class="fa-solid fa-terminal text-primary"></i>
+           My journey in web development is fueled by a relentless curiosity and
+          a dedication to staying at the forefront of technological
+          advancements.
+        </p>
+      </section>
+      <section class="w-full">
+        <h3
+          class="my-10 border-b-2 border-accent text-2xl text-center w-fit mx-auto"
+        >
+          My Certificates
+        </h3>
+        <section class="certificates min-h-[40svh] w-full">
+          <div class="bg-[url('/front-end-coder.png')] bg-cover bg-center">
+          </div>
+        </section>
+      </section>
+    </section>
+    <section class="flex items-center flex-col min-h-screen">
+      <h2 class="text-5xl">PROJECTS</h2>
+      <section
+        class="flex flex-col items-center drop-shadow-primarySh h-fit px-5"
+      >
+        {
+          projects.map((project, index) => (
+            <ProjectCard
+              i={index}
+              img={project.img}
+              title={project.title}
+              description={project.description}
+              techs={project.techs}
+            />
+          ))
+        }
+      </section>
+    </section>
+  </main>
+  <footer
+    class="min-h-[45svh] mt-32 bg-bg border-t border-text/50 flex justify-between px-20 flex-wrap gap-20 max-[899px]:justify-center p-10"
+  >
+    <section class="flex flex-col items-center [&>ul>*]:text-3xl">
+      <h3 class="text-4xl mb-5 text-primary">Social Media</h3>
+      <ul class="flex gap-4">
+        <li>
+          <a href=""
+            ><i
+              class="fa-brands fa-youtube hover:text-[#f00] hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i
+              class="fa-brands fa-square-instagram hover:text-orange-300 hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i
+              class="fa-brands fa-tiktok hover:text-pink-700 hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-col items-center [&>ul>*]:text-3xl">
+      <h3 class="text-4xl mb-5 text-secondary">Contact</h3>
+      <ul class="flex gap-4">
+        <li>
+          <a href=""
+            ><i
+              class="fa-brands fa-linkedin hover:text-blue-500 hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i
+              class="fa-brands fa-github hover:text-green-600 hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i
+              class="fa-solid fa-envelope hover:text-red-400 hover:scale-125 transition-all"
+            ></i></a
+          >
+        </li>
+        <li>
+          <i
+            class="fa-solid fa-phone hover:text-[#344] cursor-pointer hover:scale-125 transition-all"
+          ></i>
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-col items-center">
+      <p class="text-accent text-xl">Made with love <br /> By me and my 💻</p>
+    </section>
+  </footer>
+</Layout>
+
+<style>
+  .text-to-change::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #10151d;
+    border-left: 2px solid #a87ffb;
+    animation: writing 4s steps(10) infinite;
+  }
+
+  @keyframes writing {
+    40%,
+    60% {
+      left: calc(100% + 2px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  .img-box {
+    background-image: url("/me.jpeg");
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 50px #25a6e966;
+    animation: blob 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+  }
+
+  @keyframes blob {
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }
+
+  .projects-container::-webkit-scrollbar {
+    display: none;
+  }
+  .about > .about-title {
+    position: relative;
+    border-bottom: 2px solid #ffc26e;
+  }
+  .about > section {
+    opacity: 0;
+
+    transition: all 250ms 700ms ease-in-out;
+  }
+  .about.active > section {
+    opacity: 1;
+  }
+  .about > .about-title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    inset: 0;
+    background-color: #10151d;
+    transform-origin: right;
+    transform: scaleX(1);
+
+    transition: transform 400ms 200ms ease-in-out;
+  }
+  .about.active > .about-title::after {
+    transform: scaleX(0);
+  }
+
+  .certificates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+</style>
+<script>
+  const textToChange = document.querySelector(".text-to-change");
+
+  const textLoad = () => {
+    setTimeout(() => {
+      textToChange.textContent = "Developer";
+    }, 0);
+    setTimeout(() => {
+      textToChange.textContent = "Youtuber";
+    }, 4000);
+    setTimeout(() => {
+      textToChange.textContent = "Designer";
+    }, 8000);
+  };
+
+  textLoad();
+  setInterval(textLoad, 12000);
+
+  const about = document.querySelector(".about");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(about);
+</script>
