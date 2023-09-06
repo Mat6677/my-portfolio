@@ -2,6 +2,10 @@
 import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { projects } from "../mocks/projects.json";
+projects.forEach(pr => console.log(pr.img))
+
+const projectsImages = await Astro.glob("../images/projects_img/*png");
+
 ---
 
 <Layout title="Home">
@@ -70,7 +74,8 @@ import { projects } from "../mocks/projects.json";
             <i class="fa-brands fa-css3 text-[65px] text-blue-400"></i>
             <span>CSS</span>
           </li>
-          <li class="w-[65px] bg-[url('/images/tailwind-logo.png')]  bg-cover bg-center">
+          <li class="w-[65px]">
+            <img src="src/images/tailwind-logo.png" alt="">
             <span>TailWind</span>
           </li>
           <li>
@@ -91,7 +96,8 @@ import { projects } from "../mocks/projects.json";
             <i class="fa-brands fa-react text-[65px] text-blue-500"></i>
             <span>React</span>
           </li>
-          <li class="w-[65px] bg-[url('/images/astro_icon.svg')] bg-cover bg-center">
+          <li class="w-[65px]">
+            <img src="src/images/astro_icon.svg" alt="">
             <span>Astro</span>
           </li>
         </ul>
