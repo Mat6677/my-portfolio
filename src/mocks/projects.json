@@ -4,7 +4,7 @@
       "title": "Editorial Inkwell Insights",
       "description": "Landing page",
       "techs": ["React", "TailWind", "SASS"],
-      "img": "/editorial.png"
+      "img": "/my-portfolio/editorial.png"
     },
     {
       "title": "Habits Controller",
