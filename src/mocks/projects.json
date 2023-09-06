@@ -4,25 +4,25 @@
       "title": "Editorial Inkwell Insights",
       "description": "Landing page",
       "techs": ["React", "TailWind", "SASS"],
-      "img": "/my-portfolio/images/projects_img/editorial.png"
+      "img": "/projects_img/editorial.png"
     },
     {
       "title": "Habits Controller",
       "description": "Web Aplication",
       "techs": ["React", "TailWind", "CSS"],
-      "img": "/my-portfolio/images/projects_img/habits-controller.png"
+      "img": "/projects_img/habits-controller.png"
     },
     {
       "title": "Pekos Theme Park",
       "description": "Landing page",
       "techs": ["Astro", "TailWind", "CSS", "JavaScript"],
-      "img": "/my-portfolio/images/projects_img/pekos.png"
+      "img": "/projects_img/pekos.png"
     },
     {
       "title": "The Haru Restaurant",
       "description": "Landing page",
       "techs": ["React", "TailWind"],
-      "img": "/my-portfolio/images/projects_img/theHaru.png"
+      "img": "/projects_img/theHaru.png"
     }
   ]
 }
