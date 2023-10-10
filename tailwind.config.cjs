@@ -11,7 +11,7 @@ module.exports = {
         bg: "#10151d",
       },
       dropShadow: {
-        primarySh: "0 0 10px #a87ffb77",
+        primarySh: "0 0 10px #a87ffbaa",
         secondarySh: "0 0 10px #ffc26eaa",
         accentSh: "0 0 10px #25a6e9aa",
       },

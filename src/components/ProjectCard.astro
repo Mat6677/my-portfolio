@@ -4,60 +4,23 @@ interface Props {
   description: string;
   img: string;
   techs: Array<string>;
-  i: number;
 }
 
-const { title, description, img, techs, i } = Astro.props;
+const { title, description, img, techs } = Astro.props;
 ---
 
-<section
-  class={`
-      h-1/4 w-[90%] 
-      p-10 mb-[100px] mt-[50px]
-      bg-bg 
-      border border-text/50
-      rounded-[25px]
-      flex justify-between items-center gap-10
-      max-[400px]:px-2 max-md:flex-wrap max-md:justify-center
-      z-[${i * 100}]
-      project-section
-      
-  `}
->
-  <div
-    class="flex flex-col justify-center gap-20 w-1/2 min-w-[250px] max-md:w-full max-md:order-2"
-  >
-    <div>
-      <h3 class="text-5xl mb-5 max-md:text-4xl max-[430px]:text-2xl">
-        {title}
-      </h3>
-      <p class="text-3xl text-secondary max-md:text-2xl max-[430px]:text-xl">
-        - {description}
-      </p>
-    </div>
-    <div
-      class="flex gap-3 [&>*]:bg-primary/40 [&>*]:rounded-full [&>*]:px-4 [&>*]:py-2 flex-wrap"
-    >
-      {techs.map((tech) => <p>{tech}</p>)}
+<section class="relative p-5">
+  <figure class="flex justify-center">
+    <img class="max-w-[450px] w-full" src={img} alt="" />
+  </figure>
+  <div class="z-100 flex flex-col items-center justify-center gap-3">
+    <h2 class="text-2xl">{title}</h2>
+    <p class="drop-shadow-primarySh text-xl">{description}</p>
+    <div class="flex flex-wrap gap-4">
+      {techs.map((tech) => <span class="border border-text rounded-[50px] px-4 py-1">{tech}</span>)}
     </div>
   </div>
-  <figure class="w-1/2 max-md:w-full max-md:order-1">
-    <img src={img} alt={title} />
-  </figure>
+  <hr class="mt-10 bg-secondary h-[2px] drop-shadow-secondarySh">
 </section>
 
-<script>
-  const sections = document.querySelectorAll(".project-section");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.add("sticky");
-        entry.target.classList.add("top-[50px]");
-      });
-    },
-    { threshold: 0.9 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
-</script>
+<script></script>

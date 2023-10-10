@@ -30,7 +30,7 @@ body::after {
   display: block;
   width: 100%;
   inset: 0;
-  z-index: -10;
+  z-index: -100;
   margin-right: auto;
   margin-left: auto;
   background-image: radial-gradient(
@@ -142,4 +142,11 @@ body::-webkit-scrollbar-thumb {
 .certificates {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 500px));
+  justify-content: center;
+  gap: 25px;
 }

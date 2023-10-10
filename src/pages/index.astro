@@ -1,5 +1,5 @@
 ---
-import "../styles/index.css"
+import "../styles/index.css";
 import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { projects } from "../mocks/projects.json";
@@ -72,7 +72,7 @@ import { projects } from "../mocks/projects.json";
             <span>CSS</span>
           </li>
           <li class="w-[65px]">
-            <img src="/my-portfolio/tailwind-logo.png" alt="">
+            <img src="/my-portfolio/tailwind-logo.png" alt="" />
             <span>TailWind</span>
           </li>
           <li>
@@ -94,7 +94,7 @@ import { projects } from "../mocks/projects.json";
             <span>React</span>
           </li>
           <li class="w-[65px]">
-            <img src="/my-portfolio/astro_icon.svg" alt="">
+            <img src="/my-portfolio/astro_icon.svg" alt="" />
             <span>Astro</span>
           </li>
         </ul>
@@ -133,15 +133,12 @@ import { projects } from "../mocks/projects.json";
         </section>
       </section>
     </section>
-    <section class="flex items-center flex-col min-h-screen">
-      <h2 class="text-5xl">PROJECTS</h2>
-      <section
-        class="flex flex-col items-center drop-shadow-primarySh h-fit px-5"
-      >
+    <section class="min-h-screen">
+      <h2 class="text-5xl text-center">PROJECTS</h2>
+      <section class="h-fit projects-container">
         {
-          projects.map((project, index) => (
+          projects.map((project) => (
             <ProjectCard
-              i={index}
               img={project.img}
               title={project.title}
               description={project.description}
